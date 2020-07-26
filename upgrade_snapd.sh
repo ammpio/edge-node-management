@@ -12,10 +12,4 @@ rm -rf /var/lib/snapd
 apt update
 apt install snapd/testing libseccomp2/testing -y
 
-snap install ammp-edge
 snap install ammp-connect
-snap connect ammp-edge:system-observe
-snap connect ammp-edge:hardware-observe
-snap connect ammp-edge:log-observe
-snap connect ammp-edge:network-observe
-snap connect ammp-edge:network-control
