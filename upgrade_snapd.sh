@@ -6,11 +6,11 @@ chmod a+x add_raspbian_testing_repo.sh
 
 apt update
 
-apt purge snapd -y
-rm -rf /var/cache/snapd
-rm -rf /var/lib/snapd
+apt install snapd/testing -y
 
-apt install snapd/testing libseccomp2/testing -y
+systemctl stop snapd
+mv /var/lib/snapd/state.json /var/lib/snapd/state-old.json 
+systemctl start snapd
 
 snap install ammp-connect
 
