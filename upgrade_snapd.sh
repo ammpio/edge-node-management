@@ -13,3 +13,11 @@ rm -rf /var/lib/snapd
 apt install snapd/testing libseccomp2/testing -y
 
 snap install ammp-connect
+
+# Pass on any command line arguments (like --beta)
+snap install ammp-edge $@
+snap connect ammp-edge:system-observe
+snap connect ammp-edge:hardware-observe
+snap connect ammp-edge:log-observe
+snap connect ammp-edge:network-observe
+snap connect ammp-edge:network-control
