@@ -12,6 +12,9 @@ systemctl stop snapd
 mv /var/lib/snapd/state.json /var/lib/snapd/state-old.json 
 systemctl start snapd
 
+echo "Sleeping 30 seconds, for snapd device initialization"
+sleep 30
+
 snap install ammp-connect
 
 # Pass on any command line arguments (like --beta)
