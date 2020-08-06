@@ -9,7 +9,7 @@ apt update
 apt install snapd/testing -y
 
 systemctl stop snapd
-mv /var/lib/snapd/state.json /var/lib/snapd/state-old.json 
+mv /var/lib/snapd/state.json /var/lib/snapd/state-old.json
 systemctl start snapd
 
 
